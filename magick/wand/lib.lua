@@ -66,6 +66,12 @@ ffi.cdef([[  typedef void MagickWand;
   MagickBooleanType MagickGetImagePixelColor(MagickWand *wand,
     const ssize_t x,const ssize_t y,PixelWand *color);
 
+  MagickBooleanType MagickBorderImage(MagickWand *wand,
+    const PixelWand *bordercolor,const size_t width,
+    const size_t height,const CompositeOperator compose);
+
+  MagickBooleanType PixelSetColor(PixelWand *wand, const char* color);
+
   MagickWand* MagickCoalesceImages(MagickWand*);
 
   PixelWand *NewPixelWand(void);

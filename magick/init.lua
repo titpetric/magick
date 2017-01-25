@@ -373,7 +373,7 @@ do
     border = function(self, color, width, height)
       local pixel = ffi.gc(lib.NewPixelWand(), lib.DestroyPixelWand)
       lib.PixelSetColor(pixel, color)
-      return handle_result(self, lib.MagickBorderImage(self.wand, pixel, width, height))
+      return handle_result(self, lib.MagickBorderImage(self.wand, pixel, width, height, 0))
     end,
     charcoal = function(self, radius, sigma)
       return handle_result(self, lib.MagickCharcoalImage(self.wand, radius, sigma))
